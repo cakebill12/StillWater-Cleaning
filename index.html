@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fbff">
+  <meta name="description" content="StillWater Cleaning LLC provides insured residential and commercial cleaning in Moberly, Missouri and the Randolph County area. Contact Tara Lorine Smothers for a quote.">
+  <title>StillWater Cleaning LLC | A calmer kind of clean</title>
+  <style>
+    :root {
+      --ink: #17384d;
+      --ink-soft: #466173;
+      --blue: #72c5ef;
+      --blue-deep: #2388bd;
+      --blue-pale: #e7f6ff;
+      --pink: #ed9fbd;
+      --pink-deep: #c96e96;
+      --pink-pale: #fff0f6;
+      --paper: #fcfdff;
+      --white: #fff;
+      --line: #dceaf2;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+      --shadow: 0 25px 70px rgba(33, 93, 125, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 94px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--pink-deep); outline-offset: 4px; }
+    .shell { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .top-note { min-height: 34px; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 8px 18px; background: var(--blue-pale); color: #3b6984; text-align: center; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
+    .top-note .dot { width: 5px; height: 5px; background: var(--pink-deep); border-radius: 50%; display: inline-block; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(252,253,255,.91); border-bottom: 1px solid rgba(220,234,242,.8); backdrop-filter: blur(16px); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 84px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .brand-drop { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 15px 15px 15px 5px; color: var(--blue-deep); background: linear-gradient(145deg, #e9f7ff, #fff0f6); transform: rotate(-8deg); }
+    .brand-drop svg { width: 25px; height: 25px; transform: rotate(8deg); }
+    .brand-title { display: block; font-size: 15px; font-weight: 800; letter-spacing: .095em; line-height: 1.18; }
+    .brand-sub { display: block; margin-top: 4px; color: #648093; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: clamp(17px, 3vw, 36px); }
+    .nav-links a { text-decoration: none; color: #456173; font-size: 13px; font-weight: 600; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--pink-deep); }
+    .nav-links .nav-cta { padding: 12px 18px; border-radius: 999px; background: var(--ink); color: #fff; box-shadow: 0 7px 20px rgba(23,56,77,.12); }
+    .nav-links .nav-cta:hover { background: var(--blue-deep); color: #fff; }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: #fff; width: 42px; height: 42px; border-radius: 50%; color: var(--ink); cursor: pointer; }
+
+    .hero { position: relative; overflow: hidden; padding: clamp(54px, 8vw, 102px) 0 84px; background: radial-gradient(ellipse at 12% 15%, rgba(231,246,255,.8), transparent 34%), radial-gradient(ellipse at 92% 70%, rgba(255,240,246,.9), transparent 31%), var(--paper); }
+    .hero:before { content: ""; position: absolute; width: 580px; height: 580px; right: -310px; top: -300px; border: 1px solid rgba(114,197,239,.4); border-radius: 50%; box-shadow: 0 0 0 26px rgba(114,197,239,.045), 0 0 0 54px rgba(237,159,189,.05), 0 0 0 82px rgba(114,197,239,.04); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(350px, .95fr); align-items: center; gap: clamp(38px, 7vw, 92px); position: relative; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--pink-deep); font-size: 10px; font-weight: 800; letter-spacing: .18em; line-height: 1.5; text-transform: uppercase; }
+    .eyebrow:before { content: ""; width: 27px; height: 2px; background: var(--blue); }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 { max-width: 650px; margin: 20px 0 22px; font-size: clamp(47px, 6.2vw, 77px); line-height: .99; letter-spacing: -.065em; font-weight: 700; }
+    .hero h1 em { color: var(--blue-deep); font-family: var(--serif); font-weight: 400; letter-spacing: -.06em; }
+    .hero-copy { max-width: 510px; color: var(--ink-soft); font-size: clamp(15px, 1.45vw, 17px); line-height: 1.82; }
+    .scripture { display: flex; align-items: flex-start; gap: 13px; margin: 27px 0 28px; max-width: 495px; padding: 18px 0 18px 17px; border-left: 2px solid var(--pink); }
+    .scripture-mark { color: var(--pink-deep); font-family: var(--serif); font-size: 35px; line-height: .9; }
+    .scripture p { margin: 0 0 6px; color: var(--ink); font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5; }
+    .scripture small { color: #7590a0; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 10px; min-height: 50px; padding: 0 21px; border: 1px solid transparent; border-radius: 999px; text-decoration: none; font-size: 13px; font-weight: 750; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; cursor: pointer; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: white; background: var(--ink); box-shadow: 0 11px 24px rgba(23,56,77,.14); }
+    .button-primary:hover { background: var(--blue-deep); box-shadow: 0 14px 28px rgba(35,136,189,.2); }
+    .button-secondary { color: var(--ink); background: rgba(255,255,255,.7); border-color: #d6e6ef; }
+    .button-secondary:hover { border-color: var(--pink); background: white; }
+    .button svg { width: 16px; height: 16px; }
+    .hero-footnote { margin: 21px 0 0; display: flex; align-items: center; gap: 8px; color: #718a9a; font-size: 11px; }
+    .hero-footnote svg { color: var(--blue-deep); width: 15px; height: 15px; }
+
+    .hero-art { position: relative; min-height: 500px; display: grid; place-items: center; }
+    .art-halo { position: absolute; width: min(100%, 470px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 33% 25%, rgba(255,255,255,.92), rgba(231,246,255,.9) 37%, rgba(255,240,246,.82) 72%, rgba(255,255,255,.25)); }
+    .art-rings { position: absolute; width: 110%; max-width: 550px; aspect-ratio: 1.08; opacity: .88; animation: drift 13s ease-in-out infinite alternate; }
+    .art-rings svg { width: 100%; height: 100%; overflow: visible; }
+    .logo-plaque { position: relative; z-index: 2; width: min(78%, 345px); aspect-ratio: 1; display: grid; place-items: center; padding: 12px; background: radial-gradient(circle at 30% 18%, #315c75 0, #173a52 52%, #102b40 100%); border: 1px solid rgba(255,255,255,.75); border-radius: 43% 57% 50% 50% / 52% 44% 56% 48%; box-shadow: 0 28px 65px rgba(24,69,95,.25), inset 0 0 0 9px rgba(255,255,255,.035); transform: rotate(-2deg); }
+    .logo-plaque img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 5px 9px rgba(0,0,0,.1)); transform: rotate(2deg); }
+    .float-note { position: absolute; z-index: 3; display: flex; gap: 11px; align-items: center; padding: 13px 16px; border: 1px solid rgba(255,255,255,.95); border-radius: 15px; background: rgba(255,255,255,.91); box-shadow: 0 16px 38px rgba(45,94,118,.12); backdrop-filter: blur(10px); }
+    .float-note .mini-icon { display: grid; place-items: center; width: 32px; height: 32px; flex: 0 0 32px; border-radius: 11px; background: var(--pink-pale); color: var(--pink-deep); }
+    .float-note svg { width: 17px; height: 17px; }
+    .float-note strong { display: block; font-size: 12px; }
+    .float-note span { display: block; margin-top: 2px; color: #79909f; font-size: 10px; }
+    .float-one { top: 65px; right: -5px; transform: rotate(3deg); }
+    .float-two { bottom: 48px; left: -11px; transform: rotate(-3deg); }
+    .sparkle { position: absolute; color: var(--pink); font-size: 29px; }
+    .sparkle-a { top: 55px; left: 21px; }
+    .sparkle-b { right: 38px; bottom: 105px; font-size: 18px; color: var(--blue-deep); }
+    @keyframes drift { from { transform: rotate(-5deg) scale(.98); } to { transform: rotate(3deg) scale(1.02); } }
+
+    .value-strip { position: relative; z-index: 4; margin-top: -1px; background: var(--ink); color: white; }
+    .value-strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .value-item { min-height: 78px; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 17px 15px; border-right: 1px solid rgba(255,255,255,.14); color: #eaf5fb; font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; text-align: center; }
+    .value-item:last-child { border: 0; }
+    .value-item svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--blue); }
+
+    section { position: relative; }
+    .section-pad { padding: clamp(76px, 10vw, 126px) 0; }
+    .section-heading { max-width: 670px; }
+    .section-heading h2 { margin: 18px 0 18px; font-size: clamp(35px, 4.5vw, 56px); letter-spacing: -.055em; line-height: 1.05; }
+    .section-heading h2 em { font-family: var(--serif); font-weight: 400; color: var(--blue-deep); }
+    .section-heading p { max-width: 570px; color: var(--ink-soft); line-height: 1.85; font-size: 15px; }
+    .services { background: white; }
+    .services-top { display: flex; align-items: end; justify-content: space-between; gap: 35px; margin-bottom: 54px; }
+    .services-top .section-heading { max-width: 645px; }
+    .side-note { max-width: 205px; margin: 0 0 8px; padding-left: 18px; border-left: 1px solid var(--pink); color: #728a99; font-family: var(--serif); font-style: italic; font-size: 16px; line-height: 1.5; }
+    .service-list { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .service { min-height: 275px; padding: 31px 29px 29px 0; position: relative; }
+    .service + .service { padding-left: 29px; border-left: 1px solid var(--line); }
+    .service-number { display: inline-block; margin-bottom: 36px; color: var(--pink-deep); font-family: var(--serif); font-size: 15px; font-style: italic; }
+    .service-icon { width: 47px; height: 47px; margin-bottom: 22px; display: grid; place-items: center; background: var(--blue-pale); color: var(--blue-deep); border-radius: 16px 16px 16px 5px; }
+    .service:nth-child(2) .service-icon { background: var(--pink-pale); color: var(--pink-deep); border-radius: 16px 5px 16px 16px; }
+    .service:nth-child(3) .service-icon { background: #edf4ff; color: #638ec7; border-radius: 50%; }
+    .service-icon svg { width: 24px; height: 24px; }
+    .service h3 { margin-bottom: 11px; font-size: 21px; letter-spacing: -.035em; }
+    .service p { max-width: 300px; margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.8; }
+    .service-more { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; color: var(--blue-deep); font-size: 12px; font-weight: 800; text-decoration: none; }
+    .service-more svg { width: 14px; height: 14px; transition: transform .2s ease; }
+    .service-more:hover svg { transform: translateX(4px); }
+
+    .approach { overflow: hidden; background: linear-gradient(115deg, #eaf7ff 0%, #f8fcff 53%, #fff0f6 100%); }
+    .approach-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 8vw, 105px); align-items: start; }
+    .approach .section-heading { position: sticky; top: 130px; }
+    .approach .section-heading h2 { max-width: 460px; }
+    .approach-quote { margin-top: 29px; padding: 19px 22px; max-width: 400px; border-radius: 3px 18px 18px 18px; background: rgba(255,255,255,.65); border: 1px solid rgba(255,255,255,.95); }
+    .approach-quote p { margin: 0; color: #49687d; font-family: var(--serif); font-size: 16px; line-height: 1.6; }
+    .steps { padding-top: 14px; }
+    .step { display: grid; grid-template-columns: 58px 1fr; gap: 22px; padding: 27px 0 31px; border-bottom: 1px solid rgba(87,134,161,.22); }
+    .step:first-child { padding-top: 0; }
+    .step:last-child { border-bottom: 0; }
+    .step-no { width: 47px; height: 47px; display: grid; place-items: center; border-radius: 50%; background: white; color: var(--pink-deep); font-family: var(--serif); font-size: 18px; box-shadow: 0 6px 22px rgba(53,102,131,.08); }
+    .step h3 { margin: 5px 0 9px; font-size: 20px; letter-spacing: -.03em; }
+    .step p { margin: 0; max-width: 460px; color: var(--ink-soft); font-size: 13px; line-height: 1.8; }
+
+    .service-area { padding: 0; background: var(--paper); }
+    .area-card { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 40px; padding: clamp(34px, 6vw, 65px); margin: clamp(58px, 8vw, 100px) auto; max-width: 1160px; overflow: hidden; color: #fff; border-radius: 25px; background: radial-gradient(ellipse at 100% 10%, rgba(114,197,239,.34), transparent 44%), linear-gradient(120deg, #17384d, #204e68); box-shadow: var(--shadow); }
+    .area-card:after { content: ""; position: absolute; right: 105px; top: -160px; width: 390px; height: 390px; border: 1px solid rgba(255,255,255,.17); border-radius: 50%; box-shadow: 0 0 0 25px rgba(255,255,255,.025), 0 0 0 52px rgba(237,159,189,.05), 0 0 0 81px rgba(255,255,255,.025); pointer-events: none; }
+    .area-card .eyebrow { color: #f3b4cb; }
+    .area-card h2 { position: relative; z-index: 1; max-width: 640px; margin: 16px 0 14px; font-size: clamp(34px, 4.5vw, 54px); line-height: 1.04; letter-spacing: -.05em; }
+    .area-card h2 em { color: #9bdcfb; font-family: var(--serif); font-weight: 400; }
+    .area-card p { position: relative; z-index: 1; max-width: 550px; margin: 0; color: #d8e8f1; font-size: 14px; line-height: 1.8; }
+    .area-stamp { position: relative; z-index: 2; width: 150px; height: 150px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; transform: rotate(9deg); text-align: center; color: #d4f1ff; font-size: 10px; line-height: 1.8; letter-spacing: .17em; text-transform: uppercase; }
+    .area-stamp:before { content: "✳"; display: block; margin-bottom: 3px; color: #f3b4cb; font-size: 25px; }
+
+    .contact { background: white; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(42px, 8vw, 105px); align-items: start; }
+    .contact .section-heading h2 { max-width: 450px; }
+    .contact .section-heading p { margin-bottom: 28px; }
+    .contact-details { display: grid; gap: 12px; max-width: 420px; }
+    .contact-link { display: flex; align-items: center; gap: 14px; padding: 14px 16px; color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: 14px; transition: border-color .2s ease, transform .2s ease; }
+    .contact-link:hover { transform: translateY(-2px); border-color: var(--pink); }
+    .contact-link-icon { display: grid; place-items: center; width: 41px; height: 41px; border-radius: 13px; background: var(--blue-pale); color: var(--blue-deep); }
+    .contact-link:nth-child(2) .contact-link-icon { background: var(--pink-pale); color: var(--pink-deep); }
+    .contact-link svg { width: 19px; height: 19px; }
+    .contact-link small { display: block; margin-bottom: 4px; color: #7a92a1; font-size: 9px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .contact-link strong { display: block; font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
+    .insured-note { display: flex; align-items: flex-start; gap: 10px; margin-top: 20px; color: #6d8797; font-size: 12px; line-height: 1.65; }
+    .insured-note svg { color: var(--blue-deep); flex: 0 0 17px; width: 17px; height: 17px; margin-top: 1px; }
+    .quote-form { padding: clamp(24px, 4vw, 40px); border: 1px solid #e4edf4; border-radius: 22px; background: linear-gradient(145deg, #f9fcff, #fff5f9); box-shadow: 0 18px 60px rgba(39,89,116,.07); }
+    .form-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; margin-bottom: 26px; }
+    .form-top h3 { margin: 0 0 7px; font-size: 24px; letter-spacing: -.045em; }
+    .form-top p { margin: 0; color: #6e8797; font-size: 12px; line-height: 1.6; }
+    .form-flower { color: var(--pink-deep); font-size: 29px; line-height: 1; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { display: grid; gap: 7px; margin-bottom: 15px; }
+    .field label { color: #547083; font-size: 11px; font-weight: 750; }
+    .field input, .field select, .field textarea { width: 100%; min-width: 0; padding: 13px 14px; border: 1px solid #dce8ef; border-radius: 10px; color: var(--ink); background: rgba(255,255,255,.88); font-size: 13px; transition: border-color .2s ease, box-shadow .2s ease; }
+    .field input::placeholder, .field textarea::placeholder { color: #9aadb9; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue-deep); box-shadow: 0 0 0 3px rgba(114,197,239,.18); }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .form-submit { width: 100%; border: 0; }
+    .form-disclaimer { margin: 12px 0 0; color: #8195a2; font-size: 10px; line-height: 1.6; text-align: center; }
+
+    footer { padding: 34px 0 25px; background: #f0f8fc; border-top: 1px solid #e0edf4; }
+    .footer-main { display: flex; justify-content: space-between; align-items: center; gap: 22px; padding-bottom: 27px; }
+    .footer-verse { max-width: 420px; margin: 0; color: #577183; font-family: var(--serif); font-style: italic; font-size: 16px; line-height: 1.55; }
+    .footer-verse small { display: block; margin-top: 7px; color: #8aa0ad; font-family: var(--sans); font-style: normal; font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 18px; border-top: 1px solid #dae8ef; color: #7b93a1; font-size: 10px; }
+    .footer-bottom a { color: #54768a; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--pink-deep); }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr .82fr; gap: 26px; }
+      .hero-art { min-height: 420px; }
+      .float-one { right: -5px; top: 38px; }
+      .float-two { left: -9px; bottom: 23px; }
+      .services-top { display: block; }
+      .side-note { max-width: 420px; margin-top: 24px; }
+      .approach-grid { gap: 42px; }
+      .area-stamp { width: 125px; height: 125px; }
+    }
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 34px, 560px); }
+      .nav { min-height: 72px; }
+      .brand-title { font-size: 13px; }
+      .brand-drop { width: 38px; height: 38px; }
+      .menu-toggle { display: grid; place-items: center; }
+      .menu-toggle svg { width: 21px; height: 21px; }
+      .nav-links { display: none; position: absolute; top: calc(100% + 1px); left: 0; right: 0; padding: 18px 22px 23px; background: rgba(252,253,255,.98); border-bottom: 1px solid var(--line); box-shadow: 0 20px 25px rgba(23,56,77,.07); align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 13px 2px; border-bottom: 1px solid #edf3f7; }
+      .nav-links .nav-cta { margin-top: 13px; padding: 13px 17px; border: 0; text-align: center; }
+      .hero { padding: 53px 0 56px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 22px; }
+      .hero h1 { max-width: 500px; font-size: clamp(45px, 12vw, 67px); }
+      .hero-copy { font-size: 15px; }
+      .hero-art { min-height: 365px; margin: 8px auto 0; width: 100%; max-width: 450px; }
+      .logo-plaque { width: min(71%, 300px); }
+      .art-rings { width: 112%; }
+      .float-one { right: 0; top: 16px; }
+      .float-two { left: 0; bottom: 13px; }
+      .sparkle-a { left: 18px; top: 32px; }
+      .value-strip-inner { grid-template-columns: 1fr 1fr; }
+      .value-item { min-height: 63px; border-bottom: 1px solid rgba(255,255,255,.14); font-size: 9px; }
+      .value-item:nth-child(2) { border-right: 0; }
+      .value-item:nth-child(3), .value-item:nth-child(4) { border-bottom: 0; }
+      .section-pad { padding: 76px 0; }
+      .services-top { margin-bottom: 34px; }
+      .service-list { grid-template-columns: 1fr; }
+      .service { min-height: 0; display: grid; grid-template-columns: 48px 1fr; column-gap: 17px; padding: 24px 0 26px; }
+      .service + .service { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+      .service-number { grid-column: 1 / -1; margin-bottom: 15px; }
+      .service-icon { grid-column: 1; grid-row: 2 / span 3; margin-bottom: 0; }
+      .service h3 { grid-column: 2; margin-top: 2px; }
+      .service p { grid-column: 2; }
+      .service-more { grid-column: 2; margin-top: 15px; }
+      .approach-grid { grid-template-columns: 1fr; gap: 38px; }
+      .approach .section-heading { position: static; }
+      .approach-quote { max-width: none; }
+      .step { grid-template-columns: 47px 1fr; gap: 15px; }
+      .step-no { width: 42px; height: 42px; }
+      .area-card { grid-template-columns: 1fr; margin: 48px auto; padding: 34px 27px; gap: 25px; }
+      .area-card:after { right: -130px; top: auto; bottom: -160px; }
+      .area-stamp { width: 104px; height: 104px; justify-self: end; margin-top: -6px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .quote-form { padding: 25px 20px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .footer-main { align-items: flex-start; flex-direction: column; }
+      .footer-bottom { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *:before, *:after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-note"><span class="dot"></span> Insured cleaning · Moberly &amp; the Randolph County area <span class="dot"></span></div>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="#home" aria-label="StillWater Cleaning LLC home">
+        <span class="brand-drop" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5C9.9 6.4 5.8 10.2 5.8 14.4a6.2 6.2 0 0 0 12.4 0C18.2 10.2 14.1 6.4 12 2.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M8.7 15.1c.2 1.5 1.2 2.4 2.6 2.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        <span><span class="brand-title">STILLWATER</span><span class="brand-sub">Cleaning LLC</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+        <a href="#services">Cleaning services</a>
+        <a href="#approach">Our approach</a>
+        <a href="#area">Service area</a>
+        <a class="nav-cta" href="#contact">Request a quote <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="shell hero-grid">
+        <div class="hero-text">
+          <div class="eyebrow">Residential + commercial cleaning</div>
+          <h1>A little more calm in every <em>corner.</em></h1>
+          <p class="hero-copy">A clean space can change the feeling of an entire day. StillWater Cleaning brings a thoughtful, personal touch to homes and businesses around Moberly and Randolph County.</p>
+          <div class="scripture">
+            <span class="scripture-mark" aria-hidden="true">“</span>
+            <div><p>He leadeth me beside the still waters.</p><small>Psalm 23:2 · KJV</small></div>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Let's talk about your space <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="button button-secondary" href="tel:+15735149423"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a15 15 0 0 0 6 6L16 13l5 2v4c0 1.1-.9 2-2 2C10 21 3 14 3 5c0-1.1.9-2 2-2Z"/></svg>Call Tara</a>
+          </div>
+          <p class="hero-footnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg> Insured · Locally run · Personally cared for</p>
+        </div>
+        <div class="hero-art" aria-label="StillWater Cleaning logo">
+          <div class="art-halo"></div>
+          <div class="art-rings" aria-hidden="true"><svg viewBox="0 0 500 470" fill="none"><ellipse cx="250" cy="244" rx="225" ry="122" stroke="#72c5ef" stroke-opacity=".48" stroke-width="1.5"/><ellipse cx="250" cy="244" rx="197" ry="99" stroke="#ed9fbd" stroke-opacity=".6" stroke-width="1.5"/><ellipse cx="250" cy="244" rx="164" ry="78" stroke="#72c5ef" stroke-opacity=".55" stroke-width="1.5"/><ellipse cx="250" cy="244" rx="133" ry="58" stroke="#ffffff" stroke-width="5"/><ellipse cx="250" cy="244" rx="104" ry="39" stroke="#72c5ef" stroke-opacity=".55" stroke-width="1.5"/><path d="M54 257c66 62 155 82 258 48 57-19 93-51 141-44" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linecap="round"/><path d="M71 205c60-55 144-78 239-50 52 15 83 45 117 44" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linecap="round"/></svg></div>
+          <div class="logo-plaque"><img src="assets/stillwater-logo.png" alt="Still Water logo with a water droplet and ripples"></div>
+          <div class="float-note float-one"><span class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.4 5.3L20 10l-5.6 1.7L12 17l-2.4-5.3L4 10l5.6-1.7L12 3Z"/><path d="m19 16 1.2 2.5L23 19.5l-2.8.9L19 23l-1.2-2.6-2.8-.9 2.8-.9L19 16Z"/></svg></span><div><strong>A fresh feeling</strong><span>For the spaces you use every day</span></div></div>
+          <div class="float-note float-two"><span class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><strong>Insured cleaning</strong><span>Care you can feel good about</span></div></div>
+          <span class="sparkle sparkle-a" aria-hidden="true">✳</span><span class="sparkle sparkle-b" aria-hidden="true">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="value-strip" aria-label="Business highlights"><div class="shell value-strip-inner">
+      <div class="value-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10M9 20v-6h6v6"/></svg>Residential spaces</div>
+      <div class="value-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h2m4 0h2M8 11h2m4 0h2M8 15h2m4 0h2M10 21v-3h4v3"/></svg>Commercial buildings</div>
+      <div class="value-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>Insured service</div>
+      <div class="value-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>Locally run</div>
+    </div></div>
+
+    <section class="services section-pad" id="services">
+      <div class="shell">
+        <div class="services-top">
+          <div class="section-heading"><div class="eyebrow">A space that feels like yours</div><h2>Different spaces.<br><em>One thoughtful touch.</em></h2><p>Every home and workplace has its own rhythm. Tell Tara what your space needs, and start a conversation about a cleaning plan that makes sense for you.</p></div>
+          <p class="side-note">“The little details are what make a space feel cared for.”</p>
+        </div>
+        <div class="service-list">
+          <article class="service"><span class="service-number">01 / At home</span><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-7 9 7"/><path d="M5.5 10v10h13V10M9 20v-6h6v6"/><path d="M17 5.8V4h2v3.3"/></svg></span><h3>Residential cleaning</h3><p>Bring a lighter feeling to the place you unwind, gather, and make memories. Home cleaning can be discussed around your space and priorities.</p><a class="service-more" href="#contact">Ask about home cleaning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></article>
+          <article class="service"><span class="service-number">02 / At work</span><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h2m4 0h2M8 11h2m4 0h2M8 15h2m4 0h2M10 21v-3h4v3"/></svg></span><h3>Commercial cleaning</h3><p>Make a welcoming impression in the places where you serve customers, support a team, or get your best work done.</p><a class="service-more" href="#contact">Ask about business cleaning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></article>
+          <article class="service"><span class="service-number">03 / Your priorities</span><span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/><circle cx="12" cy="12" r="5"/><path d="m10 12 1.3 1.3L14.5 10"/></svg></span><h3>A personal plan</h3><p>Not sure where to start? Share what matters most, and talk through the space, timing, and details before a visit is arranged.</p><a class="service-more" href="#contact">Start a conversation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach section-pad" id="approach">
+      <div class="shell approach-grid">
+        <div class="section-heading"><div class="eyebrow">A simple, personal process</div><h2>Good cleaning starts with <em>listening.</em></h2><p>StillWater is run by Tara Lorine Smothers, so reaching out means starting a conversation directly with the person behind the business.</p><div class="approach-quote"><p>“He leadeth me beside the still waters.”</p><p style="margin-top:7px;font-family:var(--sans);font-size:10px;font-style:normal;letter-spacing:.13em;text-transform:uppercase;color:#8199a7">A reminder of the peace a cared-for space can bring · Psalm 23:2</p></div></div>
+        <div class="steps">
+          <article class="step"><span class="step-no">1</span><div><h3>Tell Tara about your space</h3><p>Call or send a message about whether you need residential or commercial cleaning and what you have in mind.</p></div></article>
+          <article class="step"><span class="step-no">2</span><div><h3>Talk through the details</h3><p>Share your priorities, questions, and preferred timing. The next step is to discuss what will work for your needs.</p></div></article>
+          <article class="step"><span class="step-no">3</span><div><h3>Make room for a fresh start</h3><p>Once the details are agreed on, you can look forward to a space that feels cared for and ready for what comes next.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-area" id="area"><div class="shell"><div class="area-card"><div><div class="eyebrow">Proudly local</div><h2>Right here in Moberly.<br><em>Serving Randolph County.</em></h2><p>StillWater Cleaning LLC serves residential and commercial clients in Moberly, Missouri and the surrounding Randolph County area. Get in touch to discuss your location and cleaning needs.</p></div><div class="area-stamp" aria-label="Moberly, Missouri, local and insured">Moberly, Missouri<br>Locally run<br>Insured service</div></div></div></section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="shell contact-grid">
+        <div class="section-heading"><div class="eyebrow">Your next step</div><h2>Let's make your space feel <em>fresh.</em></h2><p>Have a home, office, or other building in mind? Contact Tara directly to ask a question or talk through a quote.</p>
+          <div class="contact-details">
+            <a class="contact-link" href="tel:+15735149423"><span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a15 15 0 0 0 6 6L16 13l5 2v4c0 1.1-.9 2-2 2C10 21 3 14 3 5c0-1.1.9-2 2-2Z"/></svg></span><span><small>Call or text</small><strong>573-514-9423</strong></span></a>
+            <a class="contact-link" href="mailto:tsmothers25@icloud.com"><span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span><small>Email Tara</small><strong>tsmothers25@icloud.com</strong></span></a>
+          </div>
+          <div class="insured-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg><span>StillWater Cleaning LLC is insured. Please share a little about the space so Tara can follow up with you.</span></div>
+        </div>
+        <form class="quote-form" id="quote-form">
+          <div class="form-top"><div><h3>Request a quote</h3><p>A few details will help get the conversation started.</p></div><span class="form-flower" aria-hidden="true">✳</span></div>
+          <div class="form-row"><div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="First and last name"></div><div class="field"><label for="reply">Your email or phone</label><input id="reply" name="reply" autocomplete="email" required placeholder="How should Tara reach you?"></div></div>
+          <div class="field"><label for="space-type">What kind of space?</label><select id="space-type" name="space-type" required><option value="" disabled selected>Select one</option><option>Residential / home</option><option>Commercial / business</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="details">What would you like cleaned?</label><textarea id="details" name="details" placeholder="A few details about your space, location, or priorities..."></textarea></div>
+          <button class="button button-primary form-submit" type="submit">Prepare email to Tara <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 5l7 7-7 7"/></svg></button>
+          <p class="form-disclaimer">This form opens your email app with your message ready to send. Nothing is submitted or stored on this website.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell"><div class="footer-main"><a class="brand" href="#home"><span class="brand-drop" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5C9.9 6.4 5.8 10.2 5.8 14.4a6.2 6.2 0 0 0 12.4 0C18.2 10.2 14.1 6.4 12 2.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M8.7 15.1c.2 1.5 1.2 2.4 2.6 2.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span><span class="brand-title">STILLWATER</span><span class="brand-sub">Cleaning LLC</span></span></a><p class="footer-verse">“He maketh me to lie down in green pastures: he leadeth me beside the still waters.”<small>Psalm 23:2 · King James Version</small></p></div><div class="footer-bottom"><span>© <span id="year">2026</span> StillWater Cleaning LLC · Run by Tara Lorine Smothers</span><span>Moberly, Missouri · Randolph County area · <a href="tel:+15735149423">573-514-9423</a></span></div></div></footer>
+  <script>
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('#nav-links');
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      });
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open navigation');
+      }));
+      document.querySelector('#year').textContent = new Date().getFullYear();
+      document.querySelector('#quote-form').addEventListener('submit', event => {
+        event.preventDefault();
+        const form = new FormData(event.currentTarget);
+        const name = String(form.get('name') || '').trim();
+        const reply = String(form.get('reply') || '').trim();
+        const type = String(form.get('space-type') || '').trim();
+        const details = String(form.get('details') || '').trim();
+        const subject = `Cleaning quote request from ${name || 'website visitor'}`;
+        const body = [`Hello Tara,`, ``, `I'd like to ask about cleaning services.`, ``, `Name: ${name}`, `Preferred reply contact: ${reply}`, `Space type: ${type}`, `Details: ${details || 'Not provided'}`, ``, `Thank you!`].join('\n');
+        window.location.href = `mailto:tsmothers25@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+    })();
+  </script>
+</body>
+</html>
